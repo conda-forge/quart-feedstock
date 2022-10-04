@@ -1,7 +1,7 @@
 About quart
 ===========
 
-Home: https://gitlab.com/pgjones/quart
+Home: https://github.com/pallets/quart/
 
 Package license: MIT
 
@@ -9,9 +9,9 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/quart-feedstock
 
 Summary: A Python ASGI web microframework with the same API as Flask
 
-Development: https://gitlab.com/pgjones/quart
+Development: https://github.com/pallets/quart/
 
-Documentation: https://pgjones.gitlab.io/quart/
+Documentation: https://quart.palletsprojects.com/
 
 Quart is a Python ASGI web microframework. It is intended to provide the easiest way to use
 asyncio functionality in a web context, especially with existing Flask
