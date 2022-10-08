@@ -1,6 +1,6 @@
 {% set name = "Quart" %}
-{% set version = "0.18.1" %}
-{% set sha256 = "b506b9038c4f3729aacc563a1c8c84089dccbb3e5df45e138b0b89df4d8d8be7" %}
+{% set version = "0.18.3" %}
+{% set sha256 = "dc4de597d5d4693627c90904b233d729531f6b27c1164f760476d3967aee2a4a" %}
 
 package:
   name: {{ name|lower }}
