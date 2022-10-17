@@ -35,7 +35,6 @@ requirements:
     - itsdangerous >=1.1.0
     - jinja2 >=2.10
     - markupsafe
-    - toml
     - typing_extensions  # TODO: Remove for py>=38
     - werkzeug >=2.2.0
 
