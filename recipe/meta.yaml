@@ -1,51 +1,49 @@
-{% set name = "Quart" %}
-{% set version = "0.18.3" %}
-{% set sha256 = "dc4de597d5d4693627c90904b233d729531f6b27c1164f760476d3967aee2a4a" %}
+{% set version = "0.19.3" %}
 
 package:
-  name: {{ name|lower }}
+  name: quart
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/q/quart/quart-{{ version }}.tar.gz
+  sha256: 530ab6cc9b9e694ba48c00085a7bf881e2f7f23bdc51e27281e6739eee36c13f
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
-    - quart=quart.cli:main
+    - quart = quart.cli:main
 
 requirements:
   host:
     - pip
-    - python >=3.7.0
-    - setuptools >=40.6.2
     - poetry-core >=1.0.0
-
+    - python >=3.8
   run:
-    - python >=3.7.0
     - aiofiles >=0.4.0
-    - blinker >=1.4
-    - click >=8.0
+    - blinker >=1.6
+    - click >=8.0.0
     - hypercorn >=0.11.2
-    - importlib_metadata  # TODO: Remove for py>=38
-    - itsdangerous >=1.1.0
-    - jinja2 >=2.10
+    - importlib-metadata
+    - itsdangerous
+    - jinja2
     - markupsafe
-    - typing_extensions  # TODO: Remove for py>=38
-    - werkzeug >=2.2.0
+    - python >=3.8.0
+    - typing_extensions
+    - werkzeug >=3.0.0
 
 test:
   imports:
     - quart
+  requires:
+    - pip
   commands:
+    - pip check
     - quart --version
 
 about:
-  home: https://github.com/pallets/quart/
+  home: https://github.com/pallets/quart
   license: MIT
   license_family: MIT
   license_file: LICENSE
@@ -58,8 +56,7 @@ about:
     HTTP/1.1, HTTP/2 and websockets. Quart is very extendable and has a
     number of known extensions and works
     with many of the Flask extensions.
-  doc_url: https://quart.palletsprojects.com/
-  dev_url: https://github.com/pallets/quart/
+  doc_url: https://quart.palletsprojects.com
 
 extra:
   recipe-maintainers:
