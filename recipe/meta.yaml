@@ -21,15 +21,16 @@ requirements:
     - poetry-core >=1.0.0
     - python >=3.8
   run:
-    - aiofiles >=0.4.0
+    - aiofiles
     - blinker >=1.6
     - click >=8.0.0
+    - flask >=3.0.0
     - hypercorn >=0.11.2
     - importlib-metadata
     - itsdangerous
     - jinja2
     - markupsafe
-    - python >=3.8.0
+    - python >=3.8
     - typing_extensions
     - werkzeug >=3.0.0
 
@@ -38,9 +39,11 @@ test:
     - quart
   requires:
     - pip
+    - m2-grep  # [win]
   commands:
     - pip check
     - quart --version
+    - quart --version | grep -iE "Quart {{ version.replace(".", "\.") }}"
 
 about:
   home: https://github.com/pallets/quart
