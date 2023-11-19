@@ -1,4 +1,4 @@
-{% set version = "0.19.3" %}
+{% set version = "0.19.4" %}
 
 package:
   name: quart
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/q/quart/quart-{{ version }}.tar.gz
-  sha256: 530ab6cc9b9e694ba48c00085a7bf881e2f7f23bdc51e27281e6739eee36c13f
+  sha256: 22ff186cf164955a7bf7483ff42a739a9fad3b119041846b15dc9597ec74c85c
 
 build:
   noarch: python
