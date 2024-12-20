@@ -5,12 +5,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/q/quart/quart-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/q/quart/quart-{{ version }}.tar.gz
   sha256: fbe3cff25cd18b5c0e8d82bbeeaa43d78f35e5221ca5c50bb0b7c20255c87ab8
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - quart = quart.cli:main
@@ -19,7 +19,7 @@ requirements:
   host:
     - pip
     - poetry-core >=1.0.0
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - aiofiles
     - blinker >=1.6
@@ -30,7 +30,7 @@ requirements:
     - itsdangerous
     - jinja2
     - markupsafe
-    - python >=3.8
+    - python >={{ python_min }}
     - typing_extensions
     - werkzeug >=3.0.0
 
@@ -40,6 +40,7 @@ test:
   requires:
     - pip
     - m2-grep  # [win]
+    - python {{ python_min }}
   commands:
     - pip check
     - quart --version
